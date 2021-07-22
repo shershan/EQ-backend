@@ -4,19 +4,17 @@ using EQ.Models.Models.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using repository_unitofwork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+
+using EQ.BLL.Authentication;
+using EQ.BLL;
 
 namespace EQ.API
 {
@@ -79,6 +77,8 @@ namespace EQ.API
         {
             services.InitDal(this.configuration);
             services.InitRepositoryUnitOfWork();
+            services.InitAuthenticationBLL();
+            services.InitBll();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

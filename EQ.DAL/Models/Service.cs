@@ -21,5 +21,11 @@ namespace EQ.DAL.Models
             get;
             set;
         }
+
+        public virtual ICollection<Ticket> Tickets
+        {
+            get;
+            set;
+        }
     }
 }

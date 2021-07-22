@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace EQ.DAL.Models
+namespace EQ.Models.Models.DTO
 {
-    public class Window : BaseEntity
+    public class AssignedWindowModel
     {
-        public string  WindowName
+        public Guid WindowId
         {
             get;
             set;
         }
 
-        public bool IsOpen
-        {
-            get;
-            set;
-        }
-
-        public Guid? UserId
+        public string WindowName
         {
             get;
             set;
@@ -29,19 +22,25 @@ namespace EQ.DAL.Models
             set;
         }
 
-        public virtual User User
+        public string ServiceName
         {
             get;
             set;
         }
 
-        public virtual Service Service
+        public Guid? OperatorId
         {
             get;
             set;
         }
 
-        public virtual ICollection<Ticket> Tickets
+        public string OperaroeName
+        {
+            get;
+            set;
+        }
+
+        public bool IsOpen
         {
             get;
             set;

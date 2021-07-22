@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>EQ.BLL.BaseDbService</AssemblyName>
+    <RootNamespace>EQ.BLL.BaseDbService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\repository-unitofwork\repository-unitofwork\repository-unitofwork.csproj" />
+  </ItemGroup>
+
+</Project>

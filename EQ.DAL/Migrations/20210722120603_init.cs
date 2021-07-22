@@ -131,13 +131,13 @@ namespace EQ.DAL.Migrations
                 schema: "identity",
                 table: "Role",
                 columns: new[] { "Id", "RoleName" },
-                values: new object[] { new Guid("f5dd7e21-9686-49db-8a9c-dd91a675b440"), "admin" });
+                values: new object[] { new Guid("c49c0336-0283-45f9-9f70-a2015b49315e"), "admin" });
 
             migrationBuilder.InsertData(
                 schema: "identity",
                 table: "User",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RoleId", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("75227a8b-b5c9-4686-b03d-0191e405fa4a"), 0, "e0fe494b-0bfa-41b9-82d6-d8ef4f556b0d", "admin@eq.com", false, false, null, null, null, null, null, false, new Guid("f5dd7e21-9686-49db-8a9c-dd91a675b440"), null, false, null });
+                values: new object[] { new Guid("b8a495d4-05d9-4f4f-8653-bf6f1e7f4723"), 0, "851d9eed-2544-4bd7-b9cf-2fab151346b4", "admin@eq.com", false, false, null, null, null, "D404559F602EAB6FD602AC7680DACBFAADD13630335E951F097AF3900E9DE176B6DB28512F2E000B9D04FBA5133E8B1C6E8DF59DB3A8AB9D60BE4B97CC9E81DB", null, false, new Guid("c49c0336-0283-45f9-9f70-a2015b49315e"), null, false, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Request_WindowId",

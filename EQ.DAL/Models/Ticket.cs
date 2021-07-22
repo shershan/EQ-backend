@@ -3,7 +3,7 @@ using System;
 
 namespace EQ.DAL.Models
 {
-    public class Request : BaseEntity
+    public class Ticket : BaseEntity
     {
         public DateTime CreatedTime
         {
@@ -29,7 +29,19 @@ namespace EQ.DAL.Models
             set;
         }
 
+        public Guid ServiceId
+        {
+            get;
+            set;
+        }
+
         public virtual Window Window
+        {
+            get;
+            set;
+        }
+
+        public virtual Service Service
         {
             get;
             set;

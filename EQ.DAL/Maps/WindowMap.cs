@@ -18,12 +18,14 @@ namespace EQ.DAL.Maps
             entityBuilder
                 .HasOne(x => x.User)
                 .WithMany(x => x.Windows)
-                .HasForeignKey(x => x.UserId);
+                .HasForeignKey(x => x.UserId)
+                .IsRequired(false);
 
             entityBuilder
                 .HasOne(x => x.Service)
                 .WithMany(x => x.Windows)
-                .HasForeignKey(x => x.ServiceId);
+                .HasForeignKey(x => x.ServiceId)
+                .IsRequired(false);
         }
     }
 }

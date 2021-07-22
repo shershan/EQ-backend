@@ -4,22 +4,26 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EQ.DAL.Maps
 {
-    internal class RequestMap : BaseMap<Request>
+    internal class TicketMap : BaseMap<Ticket>
     {
         protected internal override string SchemaName
         {
             get => "service";
         }
 
-        protected override void Configure(EntityTypeBuilder<Request> entityBuilder)
+        protected override void Configure(EntityTypeBuilder<Ticket> entityBuilder)
         {
             entityBuilder.AddBase();
 
             entityBuilder
                 .HasOne(x => x.Window)
-                .WithMany(x => x.Requests)
+                .WithMany(x => x.Tickets)
                 .HasForeignKey(x => x.WindowId)
                 .IsRequired(false);
+
+            entityBuilder.HasOne(x => x.Service)
+                .WithMany(x => x.Tickets)
+                .HasForeignKey(x => x.ServiceId);
         }
     }
 }

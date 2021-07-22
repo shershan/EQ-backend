@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EQ.DAL.Migrations
 {
     [DbContext(typeof(EQContext))]
-    [Migration("20210722103453_init")]
+    [Migration("20210722120603_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,7 +62,7 @@ namespace EQ.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f5dd7e21-9686-49db-8a9c-dd91a675b440"),
+                            Id = new Guid("c49c0336-0283-45f9-9f70-a2015b49315e"),
                             RoleName = "admin"
                         });
                 });
@@ -144,14 +144,15 @@ namespace EQ.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("75227a8b-b5c9-4686-b03d-0191e405fa4a"),
+                            Id = new Guid("b8a495d4-05d9-4f4f-8653-bf6f1e7f4723"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e0fe494b-0bfa-41b9-82d6-d8ef4f556b0d",
+                            ConcurrencyStamp = "851d9eed-2544-4bd7-b9cf-2fab151346b4",
                             Email = "admin@eq.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
+                            PasswordHash = "D404559F602EAB6FD602AC7680DACBFAADD13630335E951F097AF3900E9DE176B6DB28512F2E000B9D04FBA5133E8B1C6E8DF59DB3A8AB9D60BE4B97CC9E81DB",
                             PhoneNumberConfirmed = false,
-                            RoleId = new Guid("f5dd7e21-9686-49db-8a9c-dd91a675b440"),
+                            RoleId = new Guid("c49c0336-0283-45f9-9f70-a2015b49315e"),
                             TwoFactorEnabled = false
                         });
                 });

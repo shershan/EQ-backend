@@ -80,7 +80,7 @@ GO
 IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'RoleName') AND [object_id] = OBJECT_ID(N'[identity].[Role]'))
     SET IDENTITY_INSERT [identity].[Role] ON;
 INSERT INTO [identity].[Role] ([Id], [RoleName])
-VALUES ('f5dd7e21-9686-49db-8a9c-dd91a675b440', N'admin');
+VALUES ('c49c0336-0283-45f9-9f70-a2015b49315e', N'admin');
 IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'RoleName') AND [object_id] = OBJECT_ID(N'[identity].[Role]'))
     SET IDENTITY_INSERT [identity].[Role] OFF;
 GO
@@ -88,7 +88,7 @@ GO
 IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'ConcurrencyStamp', N'Email', N'EmailConfirmed', N'LockoutEnabled', N'LockoutEnd', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'RoleId', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[identity].[User]'))
     SET IDENTITY_INSERT [identity].[User] ON;
 INSERT INTO [identity].[User] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RoleId], [SecurityStamp], [TwoFactorEnabled], [UserName])
-VALUES ('75227a8b-b5c9-4686-b03d-0191e405fa4a', 0, N'e0fe494b-0bfa-41b9-82d6-d8ef4f556b0d', N'admin@eq.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, NULL, NULL, CAST(0 AS bit), 'f5dd7e21-9686-49db-8a9c-dd91a675b440', NULL, CAST(0 AS bit), NULL);
+VALUES ('b8a495d4-05d9-4f4f-8653-bf6f1e7f4723', 0, N'851d9eed-2544-4bd7-b9cf-2fab151346b4', N'admin@eq.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'D404559F602EAB6FD602AC7680DACBFAADD13630335E951F097AF3900E9DE176B6DB28512F2E000B9D04FBA5133E8B1C6E8DF59DB3A8AB9D60BE4B97CC9E81DB', NULL, CAST(0 AS bit), 'c49c0336-0283-45f9-9f70-a2015b49315e', NULL, CAST(0 AS bit), NULL);
 IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'ConcurrencyStamp', N'Email', N'EmailConfirmed', N'LockoutEnabled', N'LockoutEnd', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'RoleId', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[identity].[User]'))
     SET IDENTITY_INSERT [identity].[User] OFF;
 GO
@@ -106,7 +106,7 @@ CREATE INDEX [IX_Window_UserId] ON [service].[Window] ([UserId]);
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20210722103453_init', N'5.0.8');
+VALUES (N'20210722120603_init', N'5.0.8');
 GO
 
 COMMIT;

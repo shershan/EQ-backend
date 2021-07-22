@@ -16,8 +16,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\repository-unitofwork\repository-unitofwork\repository-unitofwork.csproj" />
+    <ProjectReference Include="..\EQ.BLL.Authentication\EQ.BLL.Authentication.csproj" />
+    <ProjectReference Include="..\EQ.BLL\EQ.BLL.csproj" />
     <ProjectReference Include="..\EQ.Constants\EQ.Constants.csproj" />
     <ProjectReference Include="..\EQ.DAL\EQ.DAL.csproj" />
+    <ProjectReference Include="..\EQ.Helpers.Tokens\EQ.Helpers.Tokens.csproj" />
     <ProjectReference Include="..\EQ.Models\EQ.Models.csproj" />
   </ItemGroup>
 

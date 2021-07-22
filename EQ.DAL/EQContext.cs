@@ -3,6 +3,7 @@ using EQ.DAL.Maps;
 using EQ.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using EQ.Helpers.Hash;
 
 namespace EQ.DAL
 {
@@ -10,13 +11,13 @@ namespace EQ.DAL
     {
         public DbSet<Role> Roles { get; set; }
 
-        public DbSet<User> Users{ get; set; }
+        public DbSet<User> Users { get; set; }
 
         public DbSet<Service> Services { get; set; }
 
-        public DbSet<Window> Windows{ get; set; }
+        public DbSet<Window> Windows { get; set; }
 
-        public DbSet<Request> Requests { get; set; }
+        public DbSet<Ticket> Tickets{ get; set; }
 
 
         public EQContext(DbContextOptions contextOptions) : base(contextOptions)
@@ -30,7 +31,7 @@ namespace EQ.DAL
             new UserMap().Build(modelBuilder.Entity<User>());
             new ServiceMap().Build(modelBuilder.Entity<Service>());
             new WindowMap().Build(modelBuilder.Entity<Window>());
-            new RequestMap().Build(modelBuilder.Entity<Request>());
+            new TicketMap().Build(modelBuilder.Entity<Ticket>());
 
             this.InitDb(modelBuilder);
         }
@@ -47,13 +48,19 @@ namespace EQ.DAL
                 }
             );
 
-            modelBuilder.Entity<User>().HasData(
-                new User()
-                {
-                    Id = Guid.NewGuid(),
-                    Email = "admin@eq.com",
-                    RoleId = adminRoleId
-                });
+            var passHash = HashHelper.GetPasswordHash("1234");
+
+            var admin = new User()
+            {
+                Id = Guid.NewGuid(),
+                Email = "admin@eq.com",
+                RoleId = adminRoleId,
+                PasswordHash = passHash
+            };
+
+            admin.PasswordHash = passHash;
+
+            modelBuilder.Entity<User>().HasData(admin);
         }
     }
 }

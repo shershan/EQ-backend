@@ -22,11 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EQ.Constants\EQ.Constants.csproj" />
+    <ProjectReference Include="..\EQ.Helpers.Hash\EQ.Helpers.Hash.csproj" />
     <ProjectReference Include="..\EQ.Models\EQ.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

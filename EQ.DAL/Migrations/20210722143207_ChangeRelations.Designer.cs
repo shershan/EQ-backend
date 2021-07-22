@@ -4,14 +4,16 @@ using EQ.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EQ.DAL.Migrations
 {
     [DbContext(typeof(EQContext))]
-    partial class EQContextModelSnapshot : ModelSnapshot
+    [Migration("20210722143207_ChangeRelations")]
+    partial class ChangeRelations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
